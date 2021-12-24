@@ -10,6 +10,7 @@ export default function Header() {
   return (
     <header className="h-header w-full flex justify-between items-center">
       <button
+        type="button"
         className="md:hidden block ml-4 mb-2 cursor-pointer hover:text-orange-600"
         onClick={() => dispatch(toggleMobileSidebar())}
       >

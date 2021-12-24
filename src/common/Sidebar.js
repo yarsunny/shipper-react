@@ -5,7 +5,7 @@ import { BiLocationPlus, BiHome, BiCalendar } from "react-icons/bi";
 export default function Sidebar() {
   return (
     <ul>
-      <SidebarLink to="/beranda">
+      <SidebarLink to="/">
         <BiHome size={20} className="mr-3" />
         Beranda
       </SidebarLink>

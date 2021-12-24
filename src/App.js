@@ -21,14 +21,6 @@ function App() {
           }
         />
         <Route
-          path="beranda"
-          element={
-            <React.Suspense fallback={<>...</>}>
-              <Beranda />
-            </React.Suspense>
-          }
-        />
-        <Route
           path="pickup"
           element={
             <React.Suspense fallback={<>...</>}>
