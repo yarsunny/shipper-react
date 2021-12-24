@@ -2,9 +2,10 @@ import React from "react";
 import MainLayout from "./layouts/MainLayout";
 import { Routes, Route } from "react-router-dom";
 import Beranda from "./pages/Beranda";
-import DriverManagement from "./pages/DriverManagement";
-import Pickup from "./pages/Pickup";
 import "./App.css";
+
+const DriverManagement = React.lazy(() => import("./pages/DriverManagement"));
+const Pickup = React.lazy(() => import("./pages/Pickup"));
 
 function App() {
   return (
