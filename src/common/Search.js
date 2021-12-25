@@ -14,9 +14,18 @@ export default function Search(props) {
   }
 
   return (
-    <div className="flex md:inline-flex mt-4 md:mt-0 h-12 border-2 border-solid border-slate-200 bg-white items-center">
+    <div
+      data-testid="search"
+      className="flex md:inline-flex mt-4 md:mt-0 h-12 border-2 border-solid border-slate-200 bg-white items-center"
+    >
       <BiSearchAlt2 size={24} className="ml-2 mr-1 text-orange-600" />
-      <input type="text" placeholder="Cari Driver" className="outline-none text-l" onChange={debounce(queryChanged, 300)} />
+      <input
+        data-testid="search-input"
+        type="text"
+        placeholder="Cari Driver"
+        className="outline-none text-l"
+        onChange={debounce(queryChanged, 300)}
+      />
     </div>
   );
 }

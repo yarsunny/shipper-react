@@ -7,7 +7,7 @@ function DriverList({ drivers }) {
   }
 
   return (
-    <div className="md:overflow-x-auto md:whitespace-nowrap w-full">
+    <div data-testid="driver-list" className="md:overflow-x-auto md:whitespace-nowrap w-full">
       {drivers.map((driver) => (
         <DriverCard
           driver={driver}

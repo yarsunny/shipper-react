@@ -10,6 +10,7 @@ export default function SidebarLink({ children, to, ...props }) {
 
   return (
     <li
+      data-testid="sidebar-link"
       className={`hover:text-orange-600 border-l-4 border-solid pl-5 mb-2 ${
         match ? "border-orange-600 text-orange-600 font-bold" : "border-white"
       }`}

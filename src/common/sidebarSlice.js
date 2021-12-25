@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  status: 'closed'
+  status: "closed",
 };
 
 export const sidebarSlice = createSlice({
@@ -9,12 +9,11 @@ export const sidebarSlice = createSlice({
   initialState,
   reducers: {
     toggleMobileSidebar: (state) => {
-      state.status = state.status === 'closed' ? 'open' : 'closed';
-
+      state.status = state.status === "closed" ? "open" : "closed";
     },
   },
 });
 
-export const { toggleMobileSidebar, previous } = sidebarSlice.actions;
+export const { toggleMobileSidebar } = sidebarSlice.actions;
 export const selectSidebarStatus = (state) => state.sidebar.status;
 export default sidebarSlice.reducer;

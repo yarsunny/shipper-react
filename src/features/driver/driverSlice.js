@@ -39,7 +39,10 @@ export const driverSlice = createSlice({
       .addCase(loadDrivers.fulfilled, (state, action) => {
         state.status = "idle";
         state.drivers = action.payload.results;
-      });
+      })
+      .addCase(loadDrivers.rejected, (state, action) => {
+        state.status = "idle";
+      });;
   },
 });
 
