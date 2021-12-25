@@ -15,7 +15,7 @@ function App() {
         <Route
           path="driver"
           element={
-            <React.Suspense fallback={<>...</>}>
+            <React.Suspense fallback={<></>}>
               <DriverManagement />
             </React.Suspense>
           }
@@ -23,7 +23,7 @@ function App() {
         <Route
           path="pickup"
           element={
-            <React.Suspense fallback={<>...</>}>
+            <React.Suspense fallback={<></>}>
               <Pickup />
             </React.Suspense>
           }
