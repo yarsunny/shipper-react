@@ -1,7 +1,7 @@
 import React from "react";
 import DriverCard from "./DriverCard";
 
-export function DriverList({ drivers }) {
+function DriverList({ drivers }) {
   if (drivers.length === 0) {
     return <div className="text-slate-800 p-6 font-bold text-center mt-5">No drivers found</div>;
   }
