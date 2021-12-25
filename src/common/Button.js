@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function Button(props) {
-  if (props.plain) {
+  if (props?.className?.includes('plain')) {
     return (
       <button
         type="button"
@@ -19,7 +19,7 @@ export default function Button(props) {
     <button
       type="button"
       {...props}
-      className={`border-orange-600 disabled:cursor-not-allowed hover:bg-orange-500 cursor-pointer border-solid bg-orange-600 text-white px-4 h-12 ml-2 uppercase font-bold text-sm ${
+      className={`border-orange-600 disabled:cursor-not-allowed hover:bg-orange-500 cursor-pointer border-solid bg-orange-600 text-white px-4 h-12 uppercase font-bold text-sm ${
         props.className ? props.className : ""
       }`}
     >

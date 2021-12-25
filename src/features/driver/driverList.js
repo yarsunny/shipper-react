@@ -2,21 +2,19 @@ import React from "react";
 import DriverCard from "./DriverCard";
 
 export function DriverList({ drivers }) {
-
   if (drivers.length === 0) {
-    return (<div>No drivers found</div>)
+    return <div className="text-slate-800 p-6 font-bold text-center mt-5">No drivers found</div>;
   }
 
   return (
-    <>
+    <div className="md:overflow-x-auto md:whitespace-nowrap w-full">
       {drivers.map((driver) => (
-        <div
+        <DriverCard
+          driver={driver}
           key={`${driver.name.first}_${driver.name.last}_${driver.dob.date}`}
-        >
-          <DriverCard driver={driver} />
-        </div>
+        />
       ))}
-    </>
+    </div>
   );
 }
 

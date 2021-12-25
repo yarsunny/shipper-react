@@ -22,7 +22,7 @@ export default function MainLayout() {
             <Sidebar />
           </div>
         )}
-        <div className="grow h-full bg-stone-100 p-8">
+        <div className="h-full bg-stone-100 p-8 overflow-x-hidden w-full">
           <Outlet />
         </div>
       </div>

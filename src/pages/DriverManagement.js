@@ -8,9 +8,10 @@ import driverReducer, {
   next,
   previous,
 } from "../features/driver/driverSlice";
-import DriverList from "../features/driver/driverList";
+import DriverList from "../features/driver/DriverList";
 import Search from "../common/Search";
 import Button from "../common/Button";
+import DriverManagementLoader from "../features/driver/DriverManagementLoader";
 
 // Inject Reducer Dynamically;
 store.injectReducer("driver", driverReducer);
@@ -31,7 +32,7 @@ export default function DriverManagement() {
   }, [dispatch]);
 
   if (["loading", "init"].includes(driverData?.status)) {
-    return <>loading</>;
+    return <DriverManagementLoader />;
   }
 
   function driverManagementHeader() {
@@ -45,9 +46,11 @@ export default function DriverManagement() {
             Data driver yang bekerja dengen Anda.
           </div>
         </div>
-        <div className="flex md:inline-flex items-center">
+        <div className="block md:inline-flex items-center">
           <Search queryChanged={queryChanged} />
-          <Button>Tambah Driver &#43;</Button>
+          <Button className="w-full mt-2 md:mt-0 md:ml-2 md:w-auto md:inline">
+            Tambah Driver &#43;
+          </Button>
         </div>
       </div>
     );
@@ -55,10 +58,9 @@ export default function DriverManagement() {
 
   function driverListPagination() {
     return (
-      <div className="flex justify-center items-center">
+      <div className="flex justify-center items-center mt-6">
         <Button
-          plain
-          className="mr-4 md:mr-16"
+          className="mr-4 md:mr-16 plain"
           disabled={driverData.currentPage <= 0}
           onClick={() => {
             dispatch(previous());
@@ -67,7 +69,7 @@ export default function DriverManagement() {
           &#60; &nbsp; Previous Page
         </Button>
         <Button
-          plain
+          className="plain"
           disabled={driverData.currentPage >= driverData.totalPages - 1}
           onClick={() => {
             dispatch(next());
@@ -83,7 +85,7 @@ export default function DriverManagement() {
     <>
       {driverManagementHeader()}
       <DriverList drivers={driverData?.pageDrivers} />
-      {driverListPagination()}
+      {driverData?.pageDrivers.length ? driverListPagination() : ""}
     </>
   );
 }
