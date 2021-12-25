@@ -2,6 +2,11 @@ import React from "react";
 import DriverCard from "./DriverCard";
 
 export function DriverList({ drivers }) {
+
+  if (drivers.length === 0) {
+    return (<div>No drivers found</div>)
+  }
+
   return (
     <>
       {drivers.map((driver) => (

@@ -50,7 +50,7 @@ export const selectDriversData = (state) => {
   let filteredDrivers = [...drivers];
   if (query?.trim()) {
     filteredDrivers = filteredDrivers.filter((driver) =>
-      driver.name.first.includes(query?.trim())
+      driver.name.first.toLowerCase().includes(query?.trim())
     );
   }
   const totalPages = Math.ceil(
