@@ -1,5 +1,5 @@
 import React from "react";
 
-export function DriverCard() {
-  return (<>Driver Card</>)
+export default function DriverCard({ driver }) {
+  return <div>{driver.name.first}</div>;
 }
