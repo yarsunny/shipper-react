@@ -11,7 +11,7 @@ export default function MainLayout() {
   return (
     <div className="antialiased h-screen">
       <Header />
-      <div className="flex h-body">
+      <div className="flex md:h-body">
         {/** Web Sidebar */}
         <div className="hidden md:block flex-none w-64 h-full pt-8">
           <Sidebar />
