@@ -1,8 +1,8 @@
-### Shipper-React
+## Shipper-React
 
-##Demo 
-https://shipper-react.vercel.app/
+#### <a href="https://shipper-react.vercel.app/">Demo</a>
 
+### Steps to run in local
 - Clone the project.
 - Goto project directory.
 - run npm i to install node_modules.
